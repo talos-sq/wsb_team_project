@@ -17,16 +17,6 @@ Terminy:
 
 -------------------------------------------------------------------------------------------------
 
-# _Nazwa: SzkolnyMarket_
-
-why - Chcemy sprawić, aby rodzice mieli wgląd w to co ich dzieci kupują w sklepiku szkolnym
-
-what - Stworzenie aplikacji do zarzadzania sklepikiem szkolnym
-
-how - Stworzenie aplikacji z wykorzystaniem jezyka Python w wersji 3.11 oraz frameworku Django 5
-
--------------------------------------------------------------------------------------------------
-
 ## Rodzaje Kont:
 
 #### Konto Rodzica:
