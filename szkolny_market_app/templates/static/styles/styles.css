@@ -1,0 +1,113 @@
+/* Resetowanie domyślnych stylów przeglądarki */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Globalne style */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f9f0; /* Jasny odcień zieleni */
+    color: #285e28; /* Ciemniejszy odcień zieleni */
+    padding-bottom: 60px; /* Wysokość stopki */
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Styl nagłówka */
+header {
+    background-color: #ddf9dd; /* Jasny odcień zieleni */
+    padding: 20px;
+    border-bottom: 1px solid #aaf5aa; /* Średni odcień zieleni */
+}
+
+header h1 {
+    font-size: 2em;
+    color: #285e28; /* Ciemniejszy odcień zieleni */
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+/* Styl sekcji głównej */
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Styl stopki */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #285e28; /* Ciemniejszy odcień zieleni */
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Media queries dla responsywności */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* Style dla menu rozwijanego */
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ddf9dd; /* Jasny odcień zieleni */
+    min-width: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #aaf5aa; /* Średni odcień zieleni */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    background-color: #ddf9dd; /* Jasny odcień zieleni */
+    color: #285e28; /* Ciemniejszy odcień zieleni */
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+}
