@@ -111,3 +111,28 @@ footer {
     border: none;
     cursor: pointer;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #285e28;
+}
+
+menu {
+  float: left;
+}
+
+menu a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 5px 6px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+menu a:hover {
+  background-color: #111;
+}
