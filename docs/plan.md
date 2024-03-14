@@ -3,7 +3,6 @@
 
 | Data (checkpoint) | Zaplanowane Spotkania | Notatka  | To Do - Maciek | To Do - Patryk | to Do - Michał |
 |-------------------|-----------------------|----------------------|----------------|----------------|----------------|
-                    |                   |                       |                      |                |
 | tydz 1  04-10.03  | Marzec: 06, 08, 09    | Wstępne ustalenia    |                |                |                |
 | tydz 2  11-17.03  | Marzec: 11, 14        |                      |                |                |                |
 | tydz 3  18-24.03  | Marzec: 18, 21        |                      |                |                |                |
