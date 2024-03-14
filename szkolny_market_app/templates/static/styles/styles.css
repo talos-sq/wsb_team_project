@@ -135,6 +135,4 @@ menu a {
 /* Change the link color to #111 (black) on hover */
 menu a:hover {
   background-color: #111;
-  font-color: black;
-
 }
