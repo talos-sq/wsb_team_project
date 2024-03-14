@@ -17,6 +17,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from szkolny_market_app.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', IndexView.as_view(), name='index'),
+
+    path('student_login/', StudentLoginView.as_view(), name='student_login'),
+    path('parent_login/', ParentLoginView.as_view(), name='parent_login'),
+    path('worker_login/', WorkerLoginView.as_view(), name='worker_login'),
+
+    path('student_menu/', StudentMenuView.as_view(), name='student_menu'),
+    path('parent_menu/', ParentMenuView.as_view(), name='parent_menu'),
+    path('worker_menu/', WorkerMenuView.as_view(), name='worker_menu'),
+
+    path('student_menu/shop_products', ShopProductsView.as_view(), name='shop_products'),
+    path('student_menu/history', ShopProductsView.as_view(), name='shop_products'),
+    path('parent_menu/', ParentMenuView.as_view(), name='parent_menu'),
+    path('worker_menu/', WorkerMenuView.as_view(), name='worker_menu'),
+
+    path('shop_products/', ShopProductsView.as_view(), name='worker_menu'),
+
+
 ]
