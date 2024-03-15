@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SZKOLNY MARKET - Template</title>
-
     <link rel="icon" type="image/x-icon" href="../static/img/logo1.ico">
-
     <link rel="stylesheet" href="../static/styles/styles.css">
     <script src="../static/script.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="../static/img/logo1.jfif" alt="Szkolny Market Logo" width="200" height="200">
-
+	<!--
         <ul>
             <menu><a href="#Account">Account</a></menu>
             <menu><a href="#Favourites">Favourites</a></menu>
             <menu><a href="#Products">Products</a></menu>
             <menu><a href="#Settings">Settings</a></menu>
         </ul>
+	-->	
     </header>
 
     <main>
-        <!-- Zawartość -->
-
-    </header>
-    
-    <main>
-        <!-- Zawartość -->
-
+        <div class="login-container">
+            <form class="login-form" action="#" method="post">
+                <!-- <h1>Szkolny Market</h1> -->
+                <img src="../static/img/logo1.jfif" alt="Szkolny Market Logo" class="logo">
+                <h2></h2>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </main>
     
     <footer>
