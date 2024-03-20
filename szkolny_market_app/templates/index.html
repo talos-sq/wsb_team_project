@@ -23,6 +23,7 @@
     <main>
         <div class="login-container">
             <form class="login-form" action="#" method="post">
+                {% csrf_token %}
                 <!-- <h1>Szkolny Market</h1> -->
                 <img src="../static/img/logo1.jfif" alt="Szkolny Market Logo" class="logo">
                 <h2></h2>
@@ -38,7 +39,7 @@
             </form>
         </div>
     </main>
-    
+
     <footer>
         <p>&copy; 2024 Maciej Lech, Michał Włodarek, Patryk Jas</p>
     </footer>

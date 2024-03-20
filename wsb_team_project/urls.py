@@ -23,10 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
 
-    path('student_login/', StudentLoginView.as_view(), name='student_login'),
-    path('parent_login/', ParentLoginView.as_view(), name='parent_login'),
-    path('worker_login/', WorkerLoginView.as_view(), name='worker_login'),
-
     path('student_menu/', StudentMenuView.as_view(), name='student_menu'),
     path('parent_menu/', ParentMenuView.as_view(), name='parent_menu'),
     path('worker_menu/', WorkerMenuView.as_view(), name='worker_menu'),
