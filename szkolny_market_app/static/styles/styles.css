@@ -198,3 +198,73 @@ button:hover {
     width: 100%; /* Aby logo skalowało się odpowiednio */
     height: auto; /* Aby zachować proporcje obrazu */
 }
+
+/* Styl nawigacji */
+nav {
+    background-color: #285e28; /* Ciemniejszy odcień zieleni */
+    padding: 10px;
+    border-bottom: 1px solid #aaf5aa; /* Średni odcień zieleni */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Biały kolor tekstu */
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #aaf5aa; /* Średni odcień zieleni */
+    color: #285e28; /* Ciemniejszy odcień zieleni */
+}
+/* Styl sekcji głównej */
+main {
+    padding: 20px 0;
+    text-align: center; /* Dodajemy styl wyśrodkowania tekstu */
+}
+
+main h2 {
+    margin-bottom: 20px; /* Dodajemy odstęp od tekstu powitalnego */
+}
+
+/* Styl tabeli */
+table {
+    margin: 0 auto; /* Wyśrodkowanie tabeli */
+    border-collapse: collapse; /* Usunięcie odstępów między komórkami */
+    width: 80%; /* Dostosowanie szerokości tabeli */
+}
+
+/* Styl komórek nagłówka */
+th {
+    background-color: #285e28; /* Kolor tła */
+    padding: 8px; /* Odstęp wewnętrzny */
+	color: #fff;
+}
+
+/* Styl komórek danych */
+td {
+    border: 1px solid #ddd; /* Ramka wokół komórki */
+    padding: 8px; /* Odstęp wewnętrzny */
+
+}
+
+/* Styl komórek danych dla pierwszej kolumny */
+td:first-child {
+    font-weight: bold; /* Pogrubienie tekstu */
+}
