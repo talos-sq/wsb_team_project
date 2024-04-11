@@ -9,9 +9,9 @@ html, body {
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #f0f9f0; /* Jasny odcień zieleni */
-    color: #285e28; /* Ciemniejszy odcień zieleni */
-    padding-bottom: 60px; /* Wysokość stopki */
+    background-color: #f0f9f0;
+    color: #285e28;
+    padding-bottom: 60px;
     box-sizing: border-box;
     position: relative;
 }
@@ -23,18 +23,23 @@ body {
 
 /* Styl nagłówka */
 header {
-    background-color: #ddf9dd; /* Jasny odcień zieleni */
+    background-color: #ddf9dd;
     padding: 20px;
-    border-bottom: 1px solid #aaf5aa; /* Średni odcień zieleni */
+    border-bottom: 1px solid #aaf5aa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    font-size: 2em;
-    color: #285e28; /* Ciemniejszy odcień zieleni */
+    font-size: 1.8em;
+    color: #285e28;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -42,17 +47,30 @@ nav ul li {
     margin-right: 10px;
 }
 
-nav ul li:last-child {
-    margin-right: 0;
-}
-
 /* Styl sekcji głównej */
 main {
     padding: 20px 0;
 }
 
-section {
-    margin-bottom: 20px;
+.categories {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category {
+    flex-basis: 30%;
+    background-color: #fff;
+     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category h2 {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Styl stopki */
@@ -61,7 +79,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #285e28; /* Ciemniejszy odcień zieleni */
+    background-color: #285e28;
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -72,129 +90,26 @@ footer {
     .container {
         width: 90%;
     }
+    .categories {
+        flex-wrap: wrap;
+    }
+    .category {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
 }
-
-/* Style dla menu rozwijanego */
-.dropdown {
-    float: right;
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ddf9dd; /* Jasny odcień zieleni */
-    min-width: 100px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #aaf5aa; /* Średni odcień zieleni */
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropbtn {
-    background-color: #ddf9dd; /* Jasny odcień zieleni */
-    color: #285e28; /* Ciemniejszy odcień zieleni */
-    padding: 10px 16px;
-    border: none;
-    cursor: pointer;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #285e28;
-}
-
-menu {
-  float: left;
-}
-
-menu a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 5px 6px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-menu a:hover {
-  background-color: #111;
-}
-
-/* Dodatkowy styl dla formularza logowania */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px; /* Zmiana wysokości kontenera */
-}
-
-.login-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-
-.login-form h2 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-}
-
-.form-group input {
-    width: calc(100% - 22px); /* Szerokość przycisku minus padding */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+.button {
     background-color: #285e28;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
+.button:hover {
     background-color: #1e441e;
-}
-
-.logo {
-    display: block;
-    margin: 0 auto;
-    max-width: 200px; /* Maksymalna szerokość logo */
-    width: 100%; /* Aby logo skalowało się odpowiednio */
-    height: auto; /* Aby zachować proporcje obrazu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
