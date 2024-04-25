@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 from szkolny_market_app.views import *
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,10 +32,9 @@ urlpatterns = [
     path('parent_menu/add_funds/', ParentChildAddFundsView.as_view(), name='parent_child_add_funds'),
     path('parent_menu/history/', ParentChildHistoryView.as_view(), name='parent_child_history'),
 
-
     path('worker_menu/', WorkerMenuView.as_view(), name='worker_menu'),
     path('worker_menu/sell', WorkerMenuSellView.as_view(), name='worker_sell'),
     path('worker_menu/warehouse', WorkerMenuWarehouseView.as_view(), name='worker_warehouse'),
 
-
 ]
+urlpatterns += staticfiles_urlpatterns()
