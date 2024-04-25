@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-u2m(v!*#3-4dfp6x!bbk@32btjv-kcxw6=e5sb+9iod7qr@fe2
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -70,7 +68,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wsb_team_project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -87,14 +84,13 @@ DATABASES = {
     # Azure
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wsb_team_project',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'wsb_team_project.postgres.database.azure.com',
+        'NAME': 'wsb-team-project',
+        'USER': 'kizpyvvlyl',
+        'PASSWORD': 'OcOJ$wZ$WGVl4z4Z',
+        'HOST': 'wsb-team-project.postgres.database.azure.com',
         'PORT': 5432,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -114,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -125,7 +120,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
