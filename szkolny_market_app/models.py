@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 CATEGORY_CHOICES = (
     [0, "Jedzenie"],
     [1, "Napoje"],
+    [2, "Przekąski"]
 )
 
 CLASSES_YEAR_CHOICES = (
@@ -47,13 +48,17 @@ class Student(models.Model):
         verbose_name = "Uczeń"
         verbose_name_plural = "Uczniowie"
 
-    def __str__(self):
-        return f"{self.user.username} - {self.user.first_name} {self.user.last_name}"
+    # def __str__(self):
+    #     return f"{self.user.username} - {self.user.first_name} {self.user.last_name}"
 
 
 class Parent(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Parent")
-    children = models.ManyToManyField(Student, blank=True, verbose_name="Children")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Rodzic")
+    child = models.OneToOneField(Student, on_delete=models.CASCADE, verbose_name="Dziecko")
+
+    class Meta:
+        verbose_name = "Rodzic"
+        verbose_name_plural = "Rodzice"
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}"
@@ -65,6 +70,10 @@ class Product(models.Model):
     quantity = models.IntegerField(default=0, verbose_name="Ilosć")
     category = models.IntegerField(choices=CATEGORY_CHOICES, verbose_name="Kategoria")
     description = models.TextField(verbose_name="Opis produktu", null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Produkt"
+        verbose_name_plural = "Produkty"
 
     def __str__(self):
         return self.name

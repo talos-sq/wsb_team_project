@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZKOLNY MARKET - Panel Pracownika</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/logo1.ico">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/worker_menu/sell">Sprzedaż</a></li>
+            <li><a href="/worker_menu/warehouse">Stan magazynu</a></li>
+            <li><a href="/worker_menu">Wróć</a></li>
+        </ul>
+    </nav>
+    <div><b>Witaj:</b> {{ user.first_name }} {{ user.last_name }}</div>
+    <nav>
+        <ul>
+            <li>
+                <button class="button"><a href="{% url 'logout' %}">Wyloguj</a></button>
+            </li>
+        </ul>
+    </nav>
+    <style>
+        .food {
+            grid-area: food;
+        }
+
+        .drinks {
+            grid-area: drinks;
+        }
+
+        .snacks {
+            grid-area: snacks;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'food drinks snacks';
+            grid-template-columns: 30% 30% 30%;
+            gap: 5%;
+        {#background-color: #2196F3;#} padding: 1%;
+            justify-content: space-evenly;
+        }
+
+        .grid-container > div {
+        {#background-color: rgba(255, 255, 255, 0.8);#} text-align: center;
+            padding: 20px;
+            font-size: 20px;
+
+        }
+
+        .cont {
+            border: solid #1e441e;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+</header>
+
+<main class="container">
+    <h1>Stan magazynowy</h1>
+    <section class="categories">
+        <div class="category" id="ulubione-produkty">
+            <h2>Jedzenie</h2>
+        </div>
+        <div class="category" id="lista-produktow">
+            <h2>Napoje</h2>
+        </div>
+        <div class="category" id="historia">
+            <h2>Przekąski</h2>
+        </div>
+    </section>
+    <div class="grid-container">
+        <div class="food">
+            {% for foo in food %}
+                <div class="cont">
+                    <p><img src="../static/img/logo1.jfif" alt="" class="logo" style="width:25%;height:25%;">{{ foo.name }}</p>
+                    <p>Stan: {{ foo.quantity }}</p>
+                    <p>Cena: {{ foo.price }} zł</p>
+                </div>
+            {% empty %}
+                <p>Brak jedzenia.</p>
+            {% endfor %}
+        </div>
+
+        <div class="drinks">
+            {% for drink in drinks %}
+                <div class="cont">
+                    <p><img src="../static/img/logo1.jfif" alt="" class="logo" style="width:25%;height:25%;">{{ drink.name }}</p>
+                    <p>Stan: {{ drink.quantity }}</p>
+                    <p>Cena: {{ drink.price }} zł</p>
+                </div>
+            {% empty %}
+                <p>Brak napojów.</p>
+            {% endfor %}
+
+        </div>
+
+        <div class="snacks">
+            {% for snack in snacks %}
+                <div class="cont">
+                    <p><img src="../static/img/logo1.jfif" alt="" class="logo" style="width:25%;height:25%;">{{ snack.name }}</p>
+                    <p>Stan: {{ snack.quantity }}</p>
+                    <p>Cena: {{ snack.price }} zł</p>
+                </div>
+            {% empty %}
+                <p>Brak napojów.</p>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Maciej Lech, Michał Włodarek, Patryk Jas</p>
+</footer>
+</body>
+</html>

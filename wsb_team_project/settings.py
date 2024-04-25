@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u2m(v!*#3-4dfp6x!bbk@32btjv-kcxw6=e5sb+9iod7qr@fe2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -75,12 +75,22 @@ WSGI_APPLICATION = 'wsb_team_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
+    # Local
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'szkolny_market_db',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': 5432,
+    # }
+    # Azure
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'szkolny_market_db',
+        'NAME': 'wsb_team_project',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
+        'HOST': 'wsb_team_project.postgres.database.azure.com',
         'PORT': 5432,
     }
 }
@@ -126,3 +136,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ["https://wsb_team_project.azurewebsites.net", "http://*", "https://*"]

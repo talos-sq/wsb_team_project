@@ -22,17 +22,19 @@ from szkolny_market_app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
+    path('logout/', LogoutView.as_view(), name="logout"),
 
     path('student_menu/', StudentMenuView.as_view(), name='student_menu'),
-    path('parent_menu/', ParentMenuView.as_view(), name='parent_menu'),
-    path('worker_menu/', WorkerMenuView.as_view(), name='worker_menu'),
 
-    path('student_menu/shop_products', ShopProductsView.as_view(), name='shop_products'),
-    path('student_menu/history', ShopProductsView.as_view(), name='shop_products'),
     path('parent_menu/', ParentMenuView.as_view(), name='parent_menu'),
-    path('worker_menu/', WorkerMenuView.as_view(), name='worker_menu'),
+    path('parent_menu/balance/', ParentChildBalanceView.as_view(), name='parent_child_balance'),
+    path('parent_menu/add_funds/', ParentChildAddFundsView.as_view(), name='parent_child_add_funds'),
+    path('parent_menu/history/', ParentChildHistoryView.as_view(), name='parent_child_history'),
 
-    path('shop_products/', ShopProductsView.as_view(), name='worker_menu'),
+
+    path('worker_menu/', WorkerMenuView.as_view(), name='worker_menu'),
+    path('worker_menu/sell', WorkerMenuSellView.as_view(), name='worker_sell'),
+    path('worker_menu/warehouse', WorkerMenuWarehouseView.as_view(), name='worker_warehouse'),
 
 
 ]
