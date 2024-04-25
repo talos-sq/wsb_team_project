@@ -131,4 +131,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ["https://wsb_team_project.azurewebsites.net", "http://*", "https://*"]
+CSRF_TRUSTED_ORIGINS = ["https://wsb-team-project.azurewebsites.net", "http://*", "https://*"]
