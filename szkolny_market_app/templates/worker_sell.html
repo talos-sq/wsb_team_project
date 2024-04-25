@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZKOLNY MARKET - Panel Pracownika</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/logo1.ico">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/worker_menu/sell">Sprzedaż</a></li>
+            <li><a href="/worker_menu/warehouse">Stan magazynu</a></li>
+            <li><a href="/worker_menu">Wróć</a></li>
+        </ul>
+    </nav>
+    <div><b>Witaj:</b> {{ user.first_name }} {{ user.last_name }}</div>
+    <nav>
+        <ul>
+            <li>
+                <button class="button"><a href="{% url 'logout' %}">Wyloguj</a></button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Panel sprzedaży</h1>
+</main>
+
+<footer>
+    <p>&copy; 2024 Maciej Lech, Michał Włodarek, Patryk Jas</p>
+</footer>
+</body>
+</html>

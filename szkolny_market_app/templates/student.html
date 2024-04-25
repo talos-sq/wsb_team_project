@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,21 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SZKOLNY MARKET - Template</title>
     <link rel="icon" type="image/x-icon" href="../static/img/logo1.ico">
-    <link rel="stylesheet" href="../static/styles/styles.css">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
     <script src="../static/script.js" defer></script>
+
+    <style>
+        .favourites {
+            grid-area: favourites;
+        }
+
+        .products {
+            grid-area: products;
+        }
+
+        .history {
+            grid-area: history;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'favourites products history';
+            grid-template-columns: 30% 30% 30%;
+            gap: 5%;
+        {#background-color: #2196F3;#} padding: 1%;
+            justify-content: space-evenly;
+        }
+
+        .grid-container > div {
+        {#background-color: rgba(255, 255, 255, 0.8);#} text-align: center;
+            padding: 20px;
+            font-size: 20px;
+
+        }
+
+        .cont {
+            border: solid #1e441e;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
 <header>
     <h1>SZKOLNY MARKET</h1>
     <nav>
         <ul>
-            <li><button class="button">Historia</button></li>
-            <li><button class="button">Moje Konto</button></li>
-            <li><button class="button">Ulubione Produkty</button></li>
-            <li><button class="button">Lista Produktów</button></li>
+            <li>
+                <button class="button">Ulubione Produkty</button>
+            </li>
+            <li>
+                <button class="button">Lista Produktów</button>
+            </li>
+            <li>
+                <button class="button">Historia</button>
+            </li>
+            <li>
+                <button class="button">Moje Konto</button>
+            </li>
         </ul>
     </nav>
-    <div id="stan-konta">Stan konta: $0</div>
+    <div><b>Witaj:</b> {{ user.first_name }} {{ user.last_name }}</div>
+    <div id="stan-konta"><b>Stan konta:</b> {{ student.balance }} zł</div>
+    <nav>
+        <ul>
+            <li>
+                <button class="button"><a href="{% url 'logout' %}">Wyloguj</a></button>
+            </li>
+        </ul>
+    </nav>
 </header>
 
 <main class="container">
@@ -34,6 +88,36 @@
             <h2>Historia</h2>
         </div>
     </section>
+    <div class="grid-container">
+        <div class="favourites">
+            {% for favourite in favourites %}
+
+            {% empty %}
+                <p>Brak ulubionych.</p>
+            {% endfor %}</div>
+        <div class="products">
+            {% for product in products %}
+                <div class="cont">
+                    <p>
+                        <img src="../static/img/logo1.jfif" class="logo" style="width:25%;height:25%;">
+                        {{ product.name }}
+                    </p>
+                    <p>{{ product.description }}</p>
+                    <p>{{ product.price }} zł</p>
+                </div>
+            {% empty %}
+                <p>Brak produktów.</p>
+            {% endfor %}
+
+        </div>
+        <div class="history">
+            {% for item in history %}
+
+            {% empty %}
+                <p>Brak historii zakupów.</p>
+            {% endfor %}
+        </div>
+    </div>
 </main>
 
 <footer>

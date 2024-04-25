@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SZKOLNY MARKET - Panel Rodzica</title>
+    <title>SZKOLNY MARKET - Panel Pracownika</title>
     <link rel="icon" type="image/x-icon" href="../static/img/logo1.ico">
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
 </head>
@@ -13,9 +13,8 @@
     <header>
         <nav>
             <ul>
-			<li><a href="/parent_menu/balance">Aktualne saldo dziecka</a></li>
-			<li><a href="/parent_menu/add_funds">Dodaj środki dla dziecka</a></li>
-            <li><a href="/parent_menu/history">Sprawdź zakupy swojego dziecka</a></li>
+			<li><a href="/worker_menu/sell">Sprzedaż</a></li>
+			<li><a href="/worker_menu/warehouse">Stan magazynu</a></li>
             </ul>
         </nav>
         <div><b>Witaj:</b> {{ user.first_name }} {{ user.last_name }}</div>
@@ -26,9 +25,9 @@
         </nav>
     </header>
 
-    <main s">
-        <h2>Witaj w panelu rodzica</h2>
-        <p>Tutaj możesz zarządzać kontem swojego dziecka, dodawać środki, sprawdzać zakupy oraz monitorować aktualne saldo.</p>
+    <main>
+        <h2>Witaj w panelu pracownika</h2>
+        <p>Tutaj możesz zarządzać sklepikiem.</p>
     </main>
 
     <footer>

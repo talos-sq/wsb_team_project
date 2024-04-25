@@ -1,8 +1,13 @@
-from django.contrib.auth import authenticate, login, get_user_model
+import sys
+
+from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import CreateView, ListView, UpdateView, TemplateView
+
+from szkolny_market_app.models import *
 
 
 class IndexView(View):
@@ -29,18 +34,75 @@ class IndexView(View):
         return render(request, "index.html")
 
 
+class LogoutView(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            logout(request)
+        return redirect("/")
+
+
 class StudentMenuView(LoginRequiredMixin, PermissionRequiredMixin, View):
     permission_required = "szkolny_market_app.student"
 
     def get(self, request):
-        return render(request, 'student.html')
+        student = Student.objects.get(user=request.user.id)
+        products = Product.objects.all()
+
+        context = {"user": request.user, "student": student, "products": products}
+
+        return render(request, 'student.html', context)
 
 
 class ParentMenuView(LoginRequiredMixin, PermissionRequiredMixin, View):
     permission_required = "szkolny_market_app.parent"
 
     def get(self, request):
-        return render(request, 'parent.html')
+        context = {"user": request.user}
+
+        return render(request, 'parent.html', context)
+
+
+class ParentChildBalanceView(LoginRequiredMixin, PermissionRequiredMixin, View):
+    permission_required = "szkolny_market_app.parent"
+
+    def get(self, request):
+        parent = Parent.objects.get(user=request.user)
+        context = {"user": request.user, "child": parent.child}
+
+        return render(request, 'parent_child_balance.html', context)
+
+
+class ParentChildAddFundsView(LoginRequiredMixin, PermissionRequiredMixin, View):
+    permission_required = "szkolny_market_app.parent"
+
+    def get(self, request):
+        context = {"user": request.user}
+
+        return render(request, 'parent_child_add_funds.html', context)
+
+    def post(self, request):
+        amount = int(request.POST["amount"])
+
+        if amount > 0:
+            parent = Parent.objects.get(user=request.user)
+            parent.child.balance += amount
+            parent.child.save()
+            context = {"user": request.user, "child": parent.child}
+
+            return render(request, 'parent_child_balance.html', context)
+        else:
+            context = {"user": request.user}
+
+            return render(request, 'parent_child_add_funds.html', context)
+
+
+class ParentChildHistoryView(LoginRequiredMixin, PermissionRequiredMixin, View):
+    permission_required = "szkolny_market_app.parent"
+
+    def get(self, request):
+        context = {"user": request.user}
+
+        return render(request, 'parent_child_history.html', context)
 
 
 class WorkerMenuView(LoginRequiredMixin, PermissionRequiredMixin, View):
@@ -50,6 +112,21 @@ class WorkerMenuView(LoginRequiredMixin, PermissionRequiredMixin, View):
         return render(request, 'worker.html')
 
 
-class ShopProductsView(View):
+class WorkerMenuSellView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    permission_required = "szkolny_market_app.worker"
+
     def get(self, request):
-        return render(request, '')
+        return render(request, 'worker_sell.html')
+
+
+class WorkerMenuWarehouseView(LoginRequiredMixin, PermissionRequiredMixin, View):
+    permission_required = "szkolny_market_app.worker"
+
+    def get(self, request):
+        food = Product.objects.filter(category=0)
+        drinks = Product.objects.filter(category=1)
+        snacks = Product.objects.filter(category=2)
+
+        context = {"food": food, "drinks": drinks, "snacks": snacks}
+
+        return render(request, 'worker_warehouse.html', context)
