@@ -183,3 +183,48 @@ td {
 td:first-child {
     font-weight: bold; /* Pogrubienie tekstu */
 }
+
+/* Dodatkowy styl dla formularza logowania */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Zmiana wysokości kontenera */
+}
+
+.login-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: calc(100% - 22px); /* Szerokość przycisku minus padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px; /* Maksymalna szerokość logo */
+    width: 100%; /* Aby logo skalowało się odpowiednio */
+    height: auto; /* Aby zachować proporcje obrazu */
+}
