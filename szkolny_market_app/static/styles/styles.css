@@ -47,11 +47,21 @@ nav ul li {
     margin-right: 10px;
 }
 
+nav ul li:last-child {
+    margin-right: 0;
+}
+
 /* Styl sekcji głównej */
 main {
     padding: 20px 0;
+    text-align: center; /* Dodajemy styl wyśrodkowania tekstu */
 }
 
+main h2 {
+    margin-bottom: 20px; /* Dodajemy odstęp od tekstu powitalnego */
+}
+
+/* Styl sekcji kategorii */
 .categories {
     display: flex;
     justify-content: space-between;
@@ -60,7 +70,7 @@ main {
 .category {
     flex-basis: 30%;
     background-color: #fff;
-     padding: 20px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -98,42 +108,12 @@ footer {
         margin-bottom: 20px;
     }
 }
-.button {
-    background-color: #285e28;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.button:hover {
-    background-color: #1e441e;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 /* Styl nawigacji */
 nav {
     background-color: #285e28; /* Ciemniejszy odcień zieleni */
     padding: 10px;
     border-bottom: 1px solid #aaf5aa; /* Średni odcień zieleni */
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li:last-child {
-    margin-right: 0;
 }
 
 nav ul li a {
@@ -148,15 +128,6 @@ nav ul li a:hover {
     background-color: #aaf5aa; /* Średni odcień zieleni */
     color: #285e28; /* Ciemniejszy odcień zieleni */
 }
-/* Styl sekcji głównej */
-main {
-    padding: 20px 0;
-    text-align: center; /* Dodajemy styl wyśrodkowania tekstu */
-}
-
-main h2 {
-    margin-bottom: 20px; /* Dodajemy odstęp od tekstu powitalnego */
-}
 
 /* Styl tabeli */
 table {
@@ -169,14 +140,13 @@ table {
 th {
     background-color: #285e28; /* Kolor tła */
     padding: 8px; /* Odstęp wewnętrzny */
-	color: #fff;
+    color: #fff;
 }
 
 /* Styl komórek danych */
 td {
     border: 1px solid #ddd; /* Ramka wokół komórki */
     padding: 8px; /* Odstęp wewnętrzny */
-
 }
 
 /* Styl komórek danych dla pierwszej kolumny */
@@ -184,15 +154,34 @@ td:first-child {
     font-weight: bold; /* Pogrubienie tekstu */
 }
 
-/* Dodatkowy styl dla formularza logowania */
-.login-container {
+/* Styl przycisku */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #285e28;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #1e441e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styl kontenera formularza */
+.login-container, .sell-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px; /* Zmiana wysokości kontenera */
+    height: 60vh; /* Ustawienie wysokości kontenera na wysokość okna przeglądarki */
 }
 
-.login-form {
+/* Styl formularza */
+.login-form, .sell-form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -200,7 +189,7 @@ td:first-child {
     width: 300px;
 }
 
-.login-form h2 {
+.login-form h2, .sell-form h2 {
     margin-bottom: 20px;
     text-align: center;
 }
