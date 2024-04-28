@@ -30,18 +30,19 @@
 
 <main class="sell-container">
     <form class="login-form" method="post">
+        {% csrf_token %}
         <h2>Panel sprzedaży</h2>
         <div class="form-group">
             <label for="kod_produktu">Kod produktu (Zeskanuj produkt):</label>
-            <input type="text" id="kod_produktu" name="kod_produktu" required>
+            <input type="text" id="kod_produktu" name="product_id" required>
         </div>
         <div class="form-group">
             <label for="ilosc">Ilość:</label>
-            <input type="number" id="ilosc" name="ilosc" min="1" required>
+            <input type="number" id="ilosc" name="amount" min="1" required>
         </div>
         <div class="form-group">
             <label for="kod_ucznia">Kod ucznia (Zeskanuj kod z aplikacji):</label>
-            <input type="text" id="kod_ucznia" name="kod_ucznia" required>
+            <input type="text" id="kod_ucznia" name="student_id" required>
         </div>
         <button type="submit">Sprzedaj</button>
     </form>
