@@ -73,23 +73,23 @@ WSGI_APPLICATION = 'wsb_team_project.wsgi.application'
 
 DATABASES = {
     # Local
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'szkolny_market_db',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'postgres',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': 5432,
-    # }
-    # Azure
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wsb-team-project',
-        'USER': 'kizpyvvlyl',
-        'PASSWORD': 'OcOJ$wZ$WGVl4z4Z',
-        'HOST': 'wsb-team-project.postgres.database.azure.com',
+        'NAME': 'szkolny_market_db',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
         'PORT': 5432,
     }
+    # Azure
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'wsb-team-project',
+    #     'USER': 'kizpyvvlyl',
+    #     'PASSWORD': 'OcOJ$wZ$WGVl4z4Z',
+    #     'HOST': 'wsb-team-project.postgres.database.azure.com',
+    #     'PORT': 5432,
+    # }
 }
 
 # Password validation

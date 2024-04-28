@@ -20,6 +20,9 @@ W aplikacji są utworzone 3 konta użytkowników:
 
 # Lokalne odpalenie aplikacji
   ```bash
+  Prerequisities:
+  - Baza danych postgresql zahostowana lokalnie.
+  
   # tworzymy hermetyczne środowisko dla bibliotek aplikacji:
   python3 -m venv .venv
 
@@ -29,6 +32,10 @@ W aplikacji są utworzone 3 konta użytkowników:
   
   .\run.ps1
   ```
+
+# Prezentacja
+
+Link do filmiku: https://www.youtube.com/watch?v=VkEd6RYVr2w
 -------------------------------------------------------------------------------------------------
 
 Repozytorium do zajęć: [https://github.com/wojciech11/se_projekt_zespolowy](https://github.com/wojciech11/se_projekt_zespolowy)
