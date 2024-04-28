@@ -118,6 +118,23 @@ class WorkerMenuSellView(LoginRequiredMixin, PermissionRequiredMixin, CreateView
     def get(self, request):
         return render(request, 'worker_sell.html')
 
+    def post(self, request):
+        product_id = int(request.POST["product_id"])
+        amount = int(request.POST["amount"])
+        student_id = int(request.POST["student_id"])
+
+        product = Product.objects.get(id=product_id)
+        product_price = product.price
+
+        student = Student.objects.get(id=student_id)
+        student.balance -= product_price * amount
+        student.save()
+
+        product.quantity -= amount
+        product.save()
+
+        return render(request, 'worker_sell.html')
+
 
 class WorkerMenuWarehouseView(LoginRequiredMixin, PermissionRequiredMixin, View):
     permission_required = "szkolny_market_app.worker"
